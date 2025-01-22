@@ -1,5 +1,5 @@
 run_test:
-    image: python:3.9-slim-buster
+    image: python:3.9-buster
     before_script:
         - apt-get update && apt-get install make
     script: make test
