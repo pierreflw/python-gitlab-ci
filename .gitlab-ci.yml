@@ -16,10 +16,8 @@ build_image:
     variables:
         DOCKER_TLS_CERTDIR: "/certs"
     before_script:
-        - set +x  # Désactive l'affichage dans les logs
-        - export DECODED_VARIABLE=$(echo $REGISTRY_PASSWD | base64 -d)
-        - set -x  # Réactive l'affichage
-        - docker login -u $REGISTRY_USER -p $DECODED_VARIABLE
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
     script:
-        - docker build -t $IMAGE_NAME:$IMAGE_TAG .
-        - docker push $IMAGE_NAME:$IMAGE_TAG
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+    - docker push $IMAGE_NAME:$IMAGE_TAG
+
