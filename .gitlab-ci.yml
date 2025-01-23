@@ -2,4 +2,10 @@ run_test:
     image: python:3.9-buster
     before_script:
         - apt-get update && apt-get install make
-    script: make test
+    script: 
+        - make test
+
+build_image:
+    script:
+        - docker build -t flauw/learn_pipelines:python_app.1.0 .
+        - docker push flauw/learn_pipelines:python_app.1.0
