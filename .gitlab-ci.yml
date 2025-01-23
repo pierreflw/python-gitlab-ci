@@ -19,6 +19,6 @@ build_image:
     - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWD
     script:
     - ls -al
-    - docker build -t $IMAGE_NAME:$IMAGE_TAG /build/Dockerfile
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG ./build/Dockerfile
     - docker push $IMAGE_NAME:$IMAGE_TAG
 
