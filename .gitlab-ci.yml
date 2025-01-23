@@ -18,6 +18,7 @@ build_image:
     before_script:
     - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWD
     script:
-    - docker build -t $IMAGE_NAME:$IMAGE_TAG learning_pipelines/build/Dockerfile
+    - ls -al
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG /build/Dockerfile
     - docker push $IMAGE_NAME:$IMAGE_TAG
 
