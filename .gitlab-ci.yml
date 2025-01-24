@@ -2,7 +2,13 @@ variables:
     IMAGE_NAME: flauw/learn_pipelines
     IMAGE_TAG: python_app.1.0
 
+stages:
+    - test
+    - build
+    - deploy
+
 run_test:
+    stage: test
     image: python:3.9-buster
     before_script:
         - apt-get update && apt-get install make
@@ -10,6 +16,7 @@ run_test:
         - make test
 
 build_image:
+    stage: build
     image: docker:20.10.16
     services:
         - docker:20.10.16-dind
@@ -22,5 +29,7 @@ build_image:
     - docker push $IMAGE_NAME:$IMAGE_TAG
     tags:
     - privileged
+
+
    
 
