@@ -1,5 +1,9 @@
 # Python Flask - Demo Web Application
 
+Ce projet n'est pas le mien, je l'ai utilisé uniquement pour l'utilisation de gitlab-CI/CD avec le projet https://github.com/pierreflw/gitlab-nginx-monitoring
+
+original forked project: https://github.com/benc-uk/python-demoapp
+
 This is a simple Python Flask web application. The app provides system information and a realtime monitoring screen with dials showing CPU, memory, IO and process information.
 
 The app has been designed with cloud native demos & containers in mind, in order to provide a real working application for deployment, something more than "hello-world" but with the minimum of pre-reqs. It is not intended as a complete example of a fully functioning architecture or complex software design.
